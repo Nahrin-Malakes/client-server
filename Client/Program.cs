@@ -1,5 +1,4 @@
-﻿// DavidCli (4 may , 23)
-using System; //EventHandler
+﻿using System; //EventHandler
 using System.Windows.Forms; //Form
 using System.Drawing; //Point
 using System.Text; //Encoding
@@ -42,7 +41,7 @@ class MyForm : Form
         //ports and server ip
         CLIENT_PORT = 15000;
         SERVER_PORT = 15000;
-        SERVER_IP = "192.168.1.104";
+        SERVER_IP = "192.168.1.47";
 
         //UdpClient
         rec = null;
@@ -54,9 +53,9 @@ class MyForm : Form
         Top = 30;
         Left = 1275;
         ClientSize = new Size(420, 300); //form size
-        BackColor = Color.FromArgb(200, 218, 185);//form color
+        BackColor = Color.FromArgb(39, 55, 77);//form color
         FormBorderStyle = FormBorderStyle.Fixed3D;
-        Text = "משתמש של דוד";
+        Text = "משתמש";
         ControlBox = false;
         MinimizeBox = false;
         MaximizeBox = false;
@@ -81,7 +80,7 @@ class MyForm : Form
         lb.AutoSize = true;
         lb.Font = new Font("Ariel", 35F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, (byte)0);
         lb.Location = new Point(80, 45); //location label
-        lb.Text = "תתחיל לעבוד";
+        lb.Text = "בחר קובץ";
         lb.ForeColor = Color.Olive;
         Controls.Add(lb);
 
@@ -110,7 +109,7 @@ class MyForm : Form
 
         //menu
         this.menu = new MainMenu();
-        MenuItem m1 = new MenuItem("להתחיל");
+        MenuItem m1 = new MenuItem("תפריט");
         this.menu.MenuItems.Add(m1);
         MenuItem i1 = new MenuItem("תתחיל");
         m1.MenuItems.Add(i1);
@@ -131,7 +130,7 @@ class MyForm : Form
         }
         else
         {
-            TextReader t = new StreamReader("D:\\LIM\\DavidSerCli\\" + tbox.Text.Trim() + ".txt");
+            TextReader t = new StreamReader("C:\\Nahrin Malakes\\client-server\\" + tbox.Text.Trim() + ".txt");
             string mymessage = t.ReadToEnd();
             t.Close();
             udpSend(SERVER_IP, SERVER_PORT, mymessage);

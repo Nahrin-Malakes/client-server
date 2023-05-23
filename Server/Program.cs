@@ -1,8 +1,4 @@
-﻿/*
-    DavidSer; 4  may, 23
- * 
- * */
-using System; //Exception, Environment, EventHandler
+﻿using System; //Exception, Environment, EventHandler
 using System.Windows.Forms; //Label, MessageBox
 using System.Drawing; //Color, Font Size, Point
 using System.IO; //File
@@ -94,7 +90,7 @@ class MyForm : Form
 
         //форма
         ClientSize = new System.Drawing.Size(360, 400); //size of my form
-        Text = "שרת של דוד";
+        Text = "שרת";
         ControlBox = true; //false - remove all the Control Buttons (e.g. Minimize, Maximize, Exit) and also the icon
         StartPosition = FormStartPosition.Manual;
         BackColor = Color.Azure;
@@ -139,9 +135,9 @@ class MyForm : Form
         lb = new Label();
         lb.AutoSize = true;
         lb.Font = new System.Drawing.Font("Guttman-Aharoni", 30.75F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, (byte)0);
-        lb.Location = new System.Drawing.Point(70, 30); //coordinates of the label
+        lb.Location = new System.Drawing.Point(130, 30); //coordinates of the label
         lb.Size = new System.Drawing.Size(352, 24);
-        lb.Text = "השרת שלי";
+        lb.Text = "שרת";
         lb.ForeColor = Color.Black;
         Controls.Add(lb);
     }
@@ -152,7 +148,7 @@ class MyForm : Form
         stopReceive = false;
         rec = new Thread(new ThreadStart(ReceiveMessage));
         rec.Start();
-        lb.Text = "    השרת מאזין";
+        lb.Text = "השרת מאזין";
         lb.ForeColor = Color.Red;
         btn1.BackColor = Color.Green;
         btn1.FlatAppearance.BorderColor = Color.Green; //border color
