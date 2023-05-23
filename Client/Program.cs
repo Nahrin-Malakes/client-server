@@ -130,7 +130,7 @@ class MyForm : Form
         }
         else
         {
-            TextReader t = new StreamReader("C:\\Nahrin Malakes\\client-server\\" + tbox.Text.Trim() + ".txt");
+            TextReader t = new StreamReader("C:\\Nahrin Malakes\\client-server\\data\\" + tbox.Text.Trim() + ".txt");
             string mymessage = t.ReadToEnd();
             t.Close();
             udpSend(SERVER_IP, SERVER_PORT, mymessage);
